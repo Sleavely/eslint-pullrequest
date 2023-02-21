@@ -48,7 +48,7 @@ module.exports = {
 }
 ```
 
-Now tweak the command used to invoke _eslint-pullrequest_ by adding [`-c`](https://eslint.org/docs/latest/use/command-line-interface#-c---config):
+Tweak the _eslint-pullrequest_ command by adding [`-c`](https://eslint.org/docs/latest/use/command-line-interface#-c---config) to use our new config:
 
 ```
 npx eslint-pullrequest -c .eslintrc-newcode.js
