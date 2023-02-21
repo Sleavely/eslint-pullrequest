@@ -11,6 +11,11 @@ const {
   const lintableExtensions = LINTABLE_EXTENSIONS.split(',')
   const lintableFiles = await getLintableFiles(lintableExtensions)
 
+  if (!lintableFiles.length) {
+    console.warn('eslint-pullrequest: no files qualified for linting')
+    return
+  }
+
   const eslintArguments = [
     // proxy any command-line arguments we received
     ...process.argv.slice(2),
