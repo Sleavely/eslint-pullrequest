@@ -31,6 +31,29 @@ _eslint-pullrequest_ will use your existing ESLint configuration, but because of
 
 The size of the buffer that holds ESLints terminal output. Normally you shouldn't have to change this value unless you have hundreds or thousands of linting errors. The default is `10`.
 
+## Using _eslint-pullrequest_ to introduce new linting rules
+
+Let's say you've got a TypeScript project that you want to enable `@typescript-eslint/no-explicit-any` on, but you don't want to rewrite the entire codebase in order to get the linting to pass. We can use a separate configuration for _eslint-pullrequest_ that enforces the boyscout rule of cleaning up as you go.
+
+Start by creating a new ESLint config next to your existing `.eslintrc.js`, lets call it `.eslintrc-newcode.js`:
+
+```js
+module.exports = {
+  extends: [
+    './.eslintrc.js',
+  ],
+  rules: {
+    '@typescript-eslint/no-explicit-any': ['error'],
+  },
+}
+```
+
+Now tweak the command used to invoke _eslint-pullrequest_ by adding [`-c`](https://eslint.org/docs/latest/use/command-line-interface#-c---config):
+
+```
+npx eslint-pullrequest -c .eslintrc-newcode.js
+```
+
 ## License
 
 This project uses the MIT license. See [LICENSE.md](./LICENSE.md)
