@@ -11,7 +11,25 @@ In your Bitbucket Pipeline or Github Action, instead of `npx eslint .`:
 npx eslint-pullrequest
 ```
 
-It will use your existing ESLint configuration, but will attempt to lint all files in the pull request that have the extensions defined in the `LINTABLE_EXTENSIONS` environment variable. The default value is `.js,.ts,.jsx,.tsx`.
+### Arguments
+
+Any flags passed to _eslint-pullrequest_ will be passed to ESLint. See [ESLint CLI reference](https://eslint.org/docs/latest/use/command-line-interface) for inspiration.
+
+For example:
+
+```
+npx eslint-pullrequest --format compact
+```
+
+### Environment variables
+
+#### `LINTABLE_EXTENSIONS`
+
+_eslint-pullrequest_ will use your existing ESLint configuration, but because of how ESLint file matching works it will only attempt to lint files involved in the pull request that have the extensions defined in the `LINTABLE_EXTENSIONS` environment variable. The default value is `.js,.ts,.jsx,.tsx`.
+
+#### `MAX_EXEC_BUFFER_MB`
+
+The size of the buffer that holds ESLints terminal output. Normally you shouldn't have to change this value unless you have hundreds or thousands of linting errors. The default is `10`.
 
 ## License
 
