@@ -11,6 +11,8 @@ In your Bitbucket Pipeline or Github Action, instead of `npx eslint .`:
 npx eslint-pullrequest
 ```
 
+Note that _eslint-pullrequest_ assumes your project already has ESLint installed.
+
 ### Arguments
 
 Any flags passed to _eslint-pullrequest_ will be passed to ESLint. See [ESLint CLI reference](https://eslint.org/docs/latest/use/command-line-interface) for inspiration.
