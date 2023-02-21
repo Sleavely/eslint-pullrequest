@@ -1,6 +1,6 @@
 {
   "name": "eslint-pullrequest",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Run ESLint only on files affected by a PR",
   "engines": {
     "node": ">=14.19.1"
