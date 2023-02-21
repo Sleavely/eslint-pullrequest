@@ -25,6 +25,9 @@ const {
     .join(' ')
 
   await execute(`npx eslint ${eslintArguments}`)
+    .then(stdout => {
+      console.log(stdout)
+    })
     .catch(err => {
       // ExecException will have a code
       if (err.code) {
