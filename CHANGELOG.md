@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/Sleavely/eslint-pullrequest/compare/v1.1.1...v1.1.2) (2023-03-02)
+
+
+### Bug Fixes
+
+* update git-ci-utils to 1.1.1 ([e2385f3](https://github.com/Sleavely/eslint-pullrequest/commit/e2385f3cd190afe069b6bfa1fb127945477f6693))
+
 ## [1.1.1](https://github.com/Sleavely/eslint-pullrequest/compare/v1.1.0...v1.1.1) (2023-02-21)
 
 
